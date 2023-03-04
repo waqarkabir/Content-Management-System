@@ -1,0 +1,12 @@
+﻿@model IEnumerable<NewPage>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Navigation bar -->
+<ul>
+    @foreach (var item in Model)
+    {
+        <li><a href="@Url.Action("Details", "CMSPage", new { slug = item.Slug })">@item.Title</a></li>
+    }
+</ul>
